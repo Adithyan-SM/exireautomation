@@ -1,3 +1,5 @@
+import { useState } from "react"
+
 import Navbar from "../sections/Navbar"
 import Footer from "../sections/Footer"
 
@@ -8,6 +10,65 @@ import {
 } from "lucide-react"
 
 export default function Contact() {
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    company: "",
+    problem: "",
+  })
+
+  const [loading, setLoading] = useState(false)
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    })
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    setLoading(true)
+
+    try {
+
+      const response = await fetch(
+        "https://adhithyanjr.app.n8n.cloud/webhook/new-lead",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      )
+
+      if (!response.ok) {
+        throw new Error("Failed to send")
+      }
+
+      alert("Message sent successfully!")
+
+      setFormData({
+        name: "",
+        email: "",
+        company: "",
+        problem: "",
+      })
+
+    } catch (error) {
+
+      console.error(error)
+
+      alert("Something went wrong.")
+
+    }
+
+    setLoading(false)
+  }
+
   return (
     <div className="relative min-h-screen overflow-hidden bg-black text-white">
 
@@ -190,113 +251,13 @@ export default function Contact() {
 
                 </a>
 
-                {/* Socials */}
-                <div className="grid grid-cols-2 gap-4">
-
-                  {/* Instagram */}
-                  <a
-                    href="https://instagram.com/exire.media"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="
-                      rounded-3xl
-                      border border-white/[0.08]
-                      bg-white/[0.03]
-                      p-6
-                      backdrop-blur-xl
-                      transition-all duration-300
-                      hover:-translate-y-1
-                      hover:border-violet-500/20
-                    "
-                  >
-
-                    <div
-                      className="
-                        flex h-12 w-12 items-center justify-center
-                        rounded-2xl
-                        border border-violet-500/20
-                        bg-violet-500/10
-                      "
-                    >
-
-                      <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
-                        alt="Instagram"
-                        className="h-5 w-5 object-contain"
-                      />
-
-                    </div>
-
-                    <h3 className="mt-5 text-sm font-semibold text-white">
-
-                      Instagram
-
-                    </h3>
-
-                    <p className="mt-1 text-xs text-white/45">
-
-                      @exireautomation
-
-                    </p>
-
-                  </a>
-
-                  {/* Facebook */}
-                  <a
-                    href="https://facebook.com/exireautomation"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="
-                      rounded-3xl
-                      border border-white/[0.08]
-                      bg-white/[0.03]
-                      p-6
-                      backdrop-blur-xl
-                      transition-all duration-300
-                      hover:-translate-y-1
-                      hover:border-violet-500/20
-                    "
-                  >
-
-                    <div
-                      className="
-                        flex h-12 w-12 items-center justify-center
-                        rounded-2xl
-                        border border-violet-500/20
-                        bg-violet-500/10
-                      "
-                    >
-
-                      <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg"
-                        alt="Facebook"
-                        className="h-5 w-5 object-contain"
-                      />
-
-                    </div>
-
-                    <h3 className="mt-5 text-sm font-semibold text-white">
-
-                      Facebook
-
-                    </h3>
-
-                    <p className="mt-1 text-xs text-white/45">
-
-                      /exireautomation
-
-                    </p>
-
-                  </a>
-
-                </div>
-
               </div>
 
               {/* FORM */}
               <div className="lg:col-span-3">
 
                 <form
+                  onSubmit={handleSubmit}
                   className="
                     rounded-3xl
                     border border-white/[0.08]
@@ -323,7 +284,11 @@ export default function Contact() {
 
                         <input
                           type="text"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
                           placeholder="Your full name"
+                          required
                           className="
                             mt-2 w-full
                             rounded-xl
@@ -351,7 +316,11 @@ export default function Contact() {
 
                         <input
                           type="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
                           placeholder="you@company.com"
+                          required
                           className="
                             mt-2 w-full
                             rounded-xl
@@ -381,7 +350,11 @@ export default function Contact() {
 
                       <input
                         type="text"
+                        name="company"
+                        value={formData.company}
+                        onChange={handleChange}
                         placeholder="Acme Inc."
+                        required
                         className="
                           mt-2 w-full
                           rounded-xl
@@ -409,7 +382,11 @@ export default function Contact() {
 
                       <textarea
                         rows="6"
+                        name="problem"
+                        value={formData.problem}
+                        onChange={handleChange}
                         placeholder="Tell us about your operations, team size, and what's slowing you down..."
+                        required
                         className="
                           mt-2 w-full resize-none
                           rounded-xl
@@ -429,6 +406,7 @@ export default function Contact() {
                     {/* Button */}
                     <button
                       type="submit"
+                      disabled={loading}
                       className="
                         inline-flex items-center justify-center gap-2
                         rounded-full
@@ -440,10 +418,11 @@ export default function Contact() {
                         shadow-[0_0_40px_rgba(139,92,246,0.25)]
                         transition-all duration-300
                         hover:opacity-90
+                        disabled:opacity-50
                       "
                     >
 
-                      Send message
+                      {loading ? "Sending..." : "Send message"}
 
                       <ArrowRight className="h-4 w-4" />
 
