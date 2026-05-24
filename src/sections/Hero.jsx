@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom"
 import {
   ArrowRight,
   Activity,
@@ -6,6 +5,8 @@ import {
   Bot,
   Zap,
 } from "lucide-react"
+
+import { Link } from "react-router-dom"
 
 export default function Hero() {
   return (
@@ -68,7 +69,7 @@ export default function Hero() {
           {/* Buttons */}
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
 
-            <a
+            <Link
               href="/contact"
               className="
                 inline-flex items-center justify-center gap-2
@@ -87,9 +88,9 @@ export default function Hero() {
 
               <ArrowRight className="h-4 w-4" />
 
-            </a>
+            </Link>
 
-            <a
+            <Link
               href="/case-studies"
               className="
                 inline-flex items-center justify-center
@@ -106,7 +107,7 @@ export default function Hero() {
 
               View Case Studies
 
-            </a>
+            </Link>
 
           </div>
 
