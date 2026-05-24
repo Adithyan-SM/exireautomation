@@ -215,7 +215,7 @@ export default function Footer() {
 
                 hello@exireautomation.com
 
-              </a>
+              </button>
 
               <a
                 href="https://cal.com/exireautomation"
