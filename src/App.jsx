@@ -3,6 +3,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom"
+import { SpeedInsights } from '@vercel/speed-insights/react'
 
 import Home from "./pages/Home"
 import Services from "./pages/Services"
@@ -63,6 +64,8 @@ export default function App() {
         />
 
       </Routes>
+
+      <SpeedInsights />
 
     </BrowserRouter>
   )
