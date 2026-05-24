@@ -17,7 +17,7 @@ export default function Terms() {
 
         <p className="mt-6 text-white/60 leading-relaxed">
 
-          Last updated: May 24, 2026
+          Last updated: May 24, 2026 
 
         </p>
 
