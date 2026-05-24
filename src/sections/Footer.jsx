@@ -211,7 +211,7 @@ export default function Footer() {
                     "noopener,noreferrer"
                   )
                 }
-                className="text-left text-sm text-white/65 hover:text-white"
+                className="inline-block text-sm text-white/65 hover:text-white"
               >
 
                 hello@exireautomation.com
