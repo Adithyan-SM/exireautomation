@@ -203,14 +203,15 @@ export default function Footer() {
 
             <div className="mt-5 flex flex-col gap-4">
 
-            <button
-              onClick={() =>
-              window.open(
-              "https://mail.google.com/mail/?view=cm&fs=1&to=hello@exireautomation.com",
-              "_blank"
-               )
-              }
-              className="text-sm text-white/65 hover:text-white"
+              <button
+                onClick={() =>
+                  window.open(
+                    "https://mail.google.com/mail/?view=cm&fs=1&to=hello@exireautomation.com",
+                    "_blank",
+                    "noopener,noreferrer"
+                  )
+                }
+                className="text-left text-sm text-white/65 hover:text-white"
               >
 
                 hello@exireautomation.com
