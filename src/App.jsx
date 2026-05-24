@@ -9,6 +9,8 @@ import Services from "./pages/Services"
 import Process from "./pages/Process"
 import ScrollToTop from "./components/ScrollToTop"
 import CaseStudies from "./pages/CaseStudies"
+import Privacy from "./pages/Privacy"
+import Terms from "./pages/Terms"
 import About from "./pages/About"
 import Contact from "./pages/Contact"
 
@@ -48,6 +50,16 @@ export default function App() {
         <Route
           path="/contact"
           element={<Contact />}
+        />
+
+        <Route 
+          path="/privacy" 
+          element={<Privacy />}
+        />
+
+        <Route
+          path="/terms"
+          element={<Terms />}
         />
 
       </Routes>
