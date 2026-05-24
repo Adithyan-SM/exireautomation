@@ -70,7 +70,7 @@ export default function Hero() {
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
 
             <Link
-              href="/contact"
+              to="/contact"
               className="
                 inline-flex items-center justify-center gap-2
                 rounded-full
@@ -91,7 +91,7 @@ export default function Hero() {
             </Link>
 
             <Link
-              href="/case-studies"
+              to="/case-studies"
               className="
                 inline-flex items-center justify-center
                 rounded-full
