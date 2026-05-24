@@ -3,6 +3,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom"
+import { Analytics } from "@vercel/analytics/react"
 
 import Home from "./pages/Home"
 import Services from "./pages/Services"
@@ -63,6 +64,8 @@ export default function App() {
         />
 
       </Routes>
+
+      <Analytics />
 
     </BrowserRouter>
   )
