@@ -17,6 +17,12 @@ export default function Privacy() {
 
         <p className="mt-6 text-white/60 leading-relaxed">
 
+          Last updated: 24 May 2026
+
+        </p>
+
+        <p className="mt-6 text-white/60 leading-relaxed">
+
           Exire Automation respects your privacy.
           Any information submitted through this
           website including contact forms, emails,
