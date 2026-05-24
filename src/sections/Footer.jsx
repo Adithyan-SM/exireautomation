@@ -213,7 +213,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="https://cal.com/YOUR-USERNAME"
+                href="https://cal.com/exireautomation"
                 target="_blank"
                 rel="noreferrer"
                 className="text-sm text-white/65 hover:text-white"
