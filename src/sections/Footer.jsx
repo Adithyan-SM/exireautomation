@@ -204,7 +204,7 @@ export default function Footer() {
             <div className="mt-5 flex flex-col gap-4">
 
               <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=hello@exireautomation.com"
+                href="https://mail.google.com/mail/u/0/?fs=1&to=hello@exireautomation.com&tf=cm"
                 className="text-sm text-white/65 hover:text-white"
               >
 
