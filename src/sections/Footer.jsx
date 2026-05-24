@@ -204,7 +204,7 @@ export default function Footer() {
             <div className="mt-5 flex flex-col gap-4">
 
               <a
-                href="mailto:hello@exireautomation.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=hello@exireautomation.com"
                 className="text-sm text-white/65 hover:text-white"
               >
 
@@ -222,7 +222,7 @@ export default function Footer() {
               </Link>
 
               <a
-                href="https://instagram.com/exire.media"
+                href="https://instagram.com/exireautomation"
                 target="_blank"
                 rel="noreferrer"
                 className="text-sm text-white/65 hover:text-white"
