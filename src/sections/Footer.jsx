@@ -212,14 +212,16 @@ export default function Footer() {
 
               </a>
 
-              <Link
-                to="/contact"
+              <a
+                href="https://cal.com/YOUR-USERNAME"
+                target="_blank"
+                rel="noreferrer"
                 className="text-sm text-white/65 hover:text-white"
               >
 
                 Book Strategy Call
 
-              </Link>
+              </a>
 
               <a
                 href="https://instagram.com/exireautomation"
