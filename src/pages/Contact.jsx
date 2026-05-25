@@ -210,49 +210,51 @@ export default function Contact() {
                 </a>
 
                 {/* Email */}
-                <a
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=hello@exireautomation.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=hello@exireautomation.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                  block rounded-3xl
+                  border border-white/[0.08]
+                  bg-white/[0.03]
+                  p-6
+                  backdrop-blur-xl
+                  transition-all duration-300
+                  hover:-translate-y-1
+                  hover:border-violet-500/20
+                "
+              >
+
+                <div
                   className="
-                    block rounded-3xl
-                    border border-white/[0.08]
-                    bg-white/[0.03]
-                    p-6
-                    backdrop-blur-xl
-                    transition-all duration-300
-                    hover:-translate-y-1
-                    hover:border-violet-500/20
+                    flex h-12 w-12 items-center justify-center
+                    rounded-2xl
+                    border border-violet-500/20
+                    bg-violet-500/10
+                    text-violet-300
                   "
                 >
 
-                  <div
-                    className="
-                      flex h-12 w-12 items-center justify-center
-                      rounded-2xl
-                      border border-violet-500/20
-                      bg-violet-500/10
-                      text-violet-300
-                    "
-                  >
+                  <Mail className="h-5 w-5" />
 
-                    <Mail className="h-5 w-5" />
+                </div>
 
-                  </div>
+                <h3 className="mt-5 text-lg font-semibold text-white">
 
-                  <h3 className="mt-5 text-lg font-semibold text-white">
+                  Email
 
-                    Email
+                </h3>
 
-                  </h3>
+                <p className="mt-2 text-sm text-white/45">
 
-                  <p className="mt-2 text-sm text-white/45">
+                  hello@exireautomation.com
 
-                    hello@exireautomation.com
+                </p>
 
-                  </p>
+              </a>
 
-                </a>
+              </div>
 
               {/* FORM */}
               <div className="lg:col-span-3">
