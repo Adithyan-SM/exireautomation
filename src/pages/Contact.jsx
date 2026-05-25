@@ -6,6 +6,7 @@ import Footer from "../sections/Footer"
 import {
   ArrowRight,
   Calendar,
+  Link,
   Mail,
 } from "lucide-react"
 
@@ -210,7 +211,9 @@ export default function Contact() {
 
                 {/* Email */}
                 <a
-                  href="mailto:hello@exireautomation.com"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=hello@exireautomation.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="
                     block rounded-3xl
                     border border-white/[0.08]
@@ -250,8 +253,6 @@ export default function Contact() {
                   </p>
 
                 </a>
-
-              </div>
 
               {/* FORM */}
               <div className="lg:col-span-3">
