@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Turnstile from "react-turnstile"
 
 import Navbar from "../sections/Navbar"
 import Footer from "../sections/Footer"
@@ -6,7 +7,6 @@ import Footer from "../sections/Footer"
 import {
   ArrowRight,
   Calendar,
-  Link,
   Mail,
 } from "lucide-react"
 
@@ -21,6 +21,8 @@ export default function Contact() {
 
   const [loading, setLoading] = useState(false)
 
+  const [token, setToken] = useState("")
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -30,6 +32,11 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+
+    if (!token) {
+      alert("Please verify that you are human.")
+      return
+    }
 
     setLoading(true)
 
@@ -406,6 +413,13 @@ export default function Contact() {
 
                     </div>
 
+                    <div className="pt-2">
+                      <Turnstile
+                        sitekey={import.meta.env.VITE_TURNSTILE_SITE_KEY}
+                        onVerify={(token) => setToken(token)}
+                      />
+                    </div>
+
                     {/* Button */}
                     <button
                       type="submit"
@@ -428,6 +442,7 @@ export default function Contact() {
                       {loading ? "Sending..." : "Send message"}
 
                       <ArrowRight className="h-4 w-4" />
+                      
 
                     </button>
 
